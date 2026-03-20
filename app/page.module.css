@@ -1,0 +1,224 @@
+body {
+  background: #f4f4f4;
+  color: #171717;
+  padding-top: 80px;
+  /* prevent content hiding behind fixed navbar */
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  max-width: 90%;
+}
+
+.heroOverlay h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.heroOverlay p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.heroBtn {
+  text-decoration: none;
+  padding: 12px 25px;
+  background: #a8bd07;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.heroBtn:hover {
+  background: #cfe61e;
+}
+
+/* Ensure Next.js Image fills hero */
+/* Hero Images for fade effect */
+.heroImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+
+.heroImage.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Ensure Next.js Image fills hero */
+.heroImage :global(img) {
+  object-fit: cover;
+}
+
+/* ---------------- Services Section ---------------- */
+.services {
+  background: #f0f0f0;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.servicesgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.servicecard {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.servicecard h3 {
+  margin-bottom: 10px;
+}
+
+.servicecard p {
+  font-size: 16px;
+}
+
+/* ---------------- About Section ---------------- */
+.about {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ---------------- Contact / CTA Section ---------------- */
+.contactcta {
+  background: #2f855a;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.contactcta h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contactcta a {
+  text-decoration: none;
+  padding: 12px 25px;
+  background: #a8bd07;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.contactcta a:hover {
+  background: #cfe61e;
+}
+
+/* ---------------- Footer ---------------- */
+.footer {
+  background: #171717;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* ---------------- Responsive ---------------- */
+@media screen and (max-width: 900px) {
+  .hero {
+    height: 400px;
+  }
+
+  .heroOverlay h1 {
+    font-size: 32px;
+  }
+
+  .heroOverlay p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .header-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .hero {
+    height: 300px;
+  }
+
+  .heroOverlay h1 {
+    font-size: 24px;
+  }
+
+  .heroOverlay p {
+    font-size: 14px;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+  }
+
+  .heroBtn {
+    width: 80%;
+    margin: 5px auto;
+  }
+}

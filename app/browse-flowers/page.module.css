@@ -1,0 +1,163 @@
+/* Wrapper for the page title */
+.title-wrapper {
+    padding-top: 50px;
+    /* height of fixed header + top bar */
+    padding-bottom: 20px;
+    /* space between title and grid */
+    text-align: center;
+}
+
+/* Page title */
+.page-title {
+    font-size: 26px;
+    color: #2f4f2f;
+}
+
+/* Page title */
+.page-title {
+    font-size: 36px;
+    color: #2f4f2f;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Container for all cards */
+.container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+/* Flower grid - 3 cards per row */
+.flower-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Individual card */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Flower image */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Card body */
+.card-body {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Title */
+.card-body h1 {
+    font-size: 20px;
+    color: #2f4f2f;
+}
+
+/* Description */
+.card-body p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Price */
+.price {
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+/* Stock info */
+.stock {
+    font-size: 13px;
+    color: #888;
+}
+
+/* Buttons */
+.butt a {
+    display: inline-block;
+    padding: 10px 25px;
+    text-decoration: none;
+    background: #2e7d32;
+    color: white;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.butt a:hover {
+    background: #42d44c;
+    transform: translateY(-2px);
+}
+
+/* AddToCart wrapper */
+.card-body>div {
+    margin-top: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .flower-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 per row on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .flower-grid {
+        grid-template-columns: 1fr;
+        /* 1 per row on mobile */
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    .card-body h1 {
+        font-size: 18px;
+    }
+
+    .card-body p {
+        font-size: 13px;
+    }
+}
+
+.image-wrapper {
+    position: relative;
+    /* required for Next.js fill */
+    width: 100%;
+    height: 250px;
+    /* card image height */
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.05);
+}

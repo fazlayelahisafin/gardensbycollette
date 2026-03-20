@@ -1,0 +1,97 @@
+.body {
+    background: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.cartcontainer {
+    width: 900px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+.cartcontainer h1 {
+    margin-bottom: 25px;
+}
+
+.cartheader {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1fr 1fr;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.cartrow {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1fr 1fr;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    color: black;
+}
+
+.flowername {
+    font-weight: 600;
+}
+
+.quantitybox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantitybox button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quantitybox button:hover {
+    background: #555;
+}
+
+.removebtn {
+    background: #e74c3c;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.removebtn:hover {
+    background: #c0392b;
+}
+
+.cartsummary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    color: black;
+}
+
+.checkout {
+    background: #2ecc71;
+    border: none;
+    padding: 12px 25px;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.checkout:hover {
+    background: #27ae60;
+}

@@ -1,0 +1,78 @@
+.container {
+    width: 700px;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.container p {
+    color: blue;
+    cursor: pointer;
+    text-decoration-line: underline;
+}
+
+/* Search Box */
+
+.searchbox {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.searchbox input {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.searchbox button {
+    padding: 12px 25px;
+    border: none;
+    background-color: #2563eb;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.searchbox button:hover {
+    background-color: #1e4ed8;
+}
+
+/* Flower Card */
+
+.flowercard {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+.flowercard p {
+    margin: 6px 0;
+}
+
+/* Delete Button */
+
+.deletebtn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #dc2626;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.deletebtn:hover {
+    background-color: #b91c1c;
+}
