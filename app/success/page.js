@@ -2,17 +2,19 @@
 import classes from './page.module.css';
 import { useEffect, useContext } from 'react';
 import { CartContext } from '@/components/context';
-import { useRouter, useSearchParams } from 'next/navigation';
-export default function SuccessPage() {
+import { useRouter } from 'next/navigation';
 
+export default function SuccessPage() {
     const { cart, setCart } = useContext(CartContext);
     const router = useRouter();
-    const searchParams = useSearchParams();
-    const sessionId = searchParams.get('session_id');
-
 
     useEffect(() => {
+        const searchParams = new URLSearchParams(window.location.search);
+        const sessionId = searchParams.get('session_id');
+
         async function verifyPayment() {
+            if (!sessionId) return;
+
             const res = await fetch(`/api/verify-payment?session_id=${sessionId}`);
             const data = await res.json();
 
