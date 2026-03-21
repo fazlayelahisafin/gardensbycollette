@@ -1,7 +1,7 @@
 import classes from './page.module.css'
 import { allOrders } from '@/components/fetchingdata';
 import { toFix } from '@/components/tofix';
-
+export const dynamic = 'force-dynamic';
 export default async function Orders() {
 
     let sub;

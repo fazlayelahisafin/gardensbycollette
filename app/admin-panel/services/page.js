@@ -1,5 +1,6 @@
 import { allServices } from "@/components/fetchingdata"
 import classes from './page.module.css'
+export const dynamic = 'force-dynamic';
 export default async function Services() {
     const service = await allServices()
     return (

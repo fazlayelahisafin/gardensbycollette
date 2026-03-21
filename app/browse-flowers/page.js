@@ -3,6 +3,7 @@ import classes from './page.module.css'
 import { allFlowers } from '@/components/fetchingdata'
 import Link from 'next/link';
 import AddtoCart from '@/components/addToCart';
+export const dynamic = 'force-dynamic';
 export default async function BrowseFlower() {
     const flowers = await allFlowers();
     return (
