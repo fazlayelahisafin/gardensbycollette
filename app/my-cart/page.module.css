@@ -1,46 +1,70 @@
+/* =========================
+   Cart Page - Full Redesign
+   ========================= */
+
+/* Page Body */
 .body {
-    background: #f4f6f8;
+    background: #f7f8fa;
     display: flex;
     justify-content: center;
-    padding: 50px;
+    padding: 50px 20px;
+    min-height: 100vh;
 }
 
+/* Cart Container */
 .cartcontainer {
-    width: 900px;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    color: black;
+    width: 100%;
+    max-width: 960px;
+    background: #ffffff;
+    padding: 35px 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    color: #1a1a1a;
+    transition: all 0.3s ease;
 }
 
+/* Heading */
 .cartcontainer h1 {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #2f4f2f;
+    text-align: center;
 }
 
+/* Grid Header */
 .cartheader {
     display: grid;
     grid-template-columns: 2fr 1fr 1.5fr 1fr 1fr;
-    font-weight: bold;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #eee;
-    margin-bottom: 10px;
-    color: black;
+    font-weight: 600;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 15px;
+    color: #333;
 }
 
+/* Cart Rows */
 .cartrow {
     display: grid;
     grid-template-columns: 2fr 1fr 1.5fr 1fr 1fr;
     align-items: center;
     padding: 15px 0;
     border-bottom: 1px solid #eee;
-    color: black;
+    transition: background 0.3s, transform 0.2s;
+    border-radius: 8px;
 }
 
+.cartrow:hover {
+    background: #f1f7f3;
+    transform: scale(1.002);
+}
+
+/* Flower Name */
 .flowername {
     font-weight: 600;
+    color: #2f4f2f;
 }
 
+/* Quantity Box */
 .quantitybox {
     display: flex;
     align-items: center;
@@ -48,50 +72,130 @@
 }
 
 .quantitybox button {
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     border: none;
-    background: #333;
+    background: #27ae60;
     color: white;
-    border-radius: 5px;
+    font-weight: bold;
+    border-radius: 6px;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .quantitybox button:hover {
-    background: #555;
+    background: #219150;
 }
 
+/* Remove Button */
 .removebtn {
     background: #e74c3c;
     border: none;
     color: white;
-    padding: 6px 12px;
-    border-radius: 5px;
+    padding: 7px 14px;
+    border-radius: 6px;
     cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
 }
 
 .removebtn:hover {
     background: #c0392b;
+    transform: translateY(-1px);
 }
 
+/* Item Total */
+.itemtotal {
+    font-weight: 600;
+    color: #2f4f2f;
+}
+
+/* Cart Summary */
 .cartsummary {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 25px;
-    color: black;
+    margin-top: 30px;
+    padding: 18px 22px;
+    border-top: 2px solid #ddd;
+    background: #f4f9f4;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s;
 }
 
+.cartsummary h4 {
+    margin: 0;
+}
+
+/* Checkout Button */
 .checkout {
     background: #2ecc71;
     border: none;
-    padding: 12px 25px;
+    padding: 14px 28px;
     color: white;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
 }
 
 .checkout:hover {
     background: #27ae60;
+    transform: translateY(-1px);
+}
+
+/* No Items Message */
+.cartcontainer p {
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+    .cartheader,
+    .cartrow {
+        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .cartcontainer {
+        padding: 25px 15px;
+    }
+
+    .cartheader {
+        display: none;
+    }
+
+    .cartrow {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .cartsummary {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .checkout {
+        width: 100%;
+    }
+
+    .quantitybox {
+        gap: 6px;
+    }
 }

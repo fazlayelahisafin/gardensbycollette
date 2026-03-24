@@ -9,12 +9,6 @@
 
 /* Page title */
 .page-title {
-    font-size: 26px;
-    color: #2f4f2f;
-}
-
-/* Page title */
-.page-title {
     font-size: 36px;
     color: #2f4f2f;
     text-align: center;
@@ -26,13 +20,14 @@
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
+    padding: 0 15px;
+    /* small padding for mobile */
 }
 
 /* Flower grid - 3 cards per row */
 .flower-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* 3 columns */
     gap: 20px;
     width: 100%;
     max-width: 1200px;
@@ -54,11 +49,23 @@
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Flower image */
-.card img {
+/* Flower image wrapper for Next.js Image */
+.image-wrapper {
+    position: relative;
+    /* required for Next.js fill */
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 250px;
+    /* default card image height */
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.05);
 }
 
 /* Card body */
@@ -117,22 +124,31 @@
     margin-top: 5px;
 }
 
-/* Responsive adjustments */
+/* ========================= */
+/* RESPONSIVE GRID ADJUSTMENTS */
+/* ========================= */
+
+/* Tablets */
 @media (max-width: 1024px) {
     .flower-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 per row on tablets */
+        /* 2 cards per row */
     }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
     .flower-grid {
         grid-template-columns: 1fr;
-        /* 1 per row on mobile */
+        /* 1 card per row */
     }
 
-    .card img {
-        height: 180px;
+    .card {
+        width: 100%;
+    }
+
+    .image-wrapper {
+        height: 200px;
     }
 
     .card-body h1 {
@@ -142,22 +158,32 @@
     .card-body p {
         font-size: 13px;
     }
+
+    .page-title {
+        font-size: 28px;
+    }
 }
 
-.image-wrapper {
-    position: relative;
-    /* required for Next.js fill */
-    width: 100%;
-    height: 250px;
-    /* card image height */
-    border-radius: 12px 12px 0 0;
-    overflow: hidden;
-}
+/* Extra small mobile */
+@media (max-width: 480px) {
+    .image-wrapper {
+        height: 180px;
+    }
 
-.image-wrapper img {
-    transition: transform 0.3s ease;
-}
+    .page-title {
+        font-size: 24px;
+    }
 
-.image-wrapper:hover img {
-    transform: scale(1.05);
+    .card-body h1 {
+        font-size: 16px;
+    }
+
+    .card-body p {
+        font-size: 12px;
+    }
+
+    .butt a {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }

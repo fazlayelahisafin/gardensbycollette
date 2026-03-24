@@ -44,12 +44,13 @@ export default function Checkout() {
 
                     {
                         (cart.length > 0) ? cart.map(item => {
-                            <div className={classes.orderrow}>
-                                <span>{cart.title}</span>
-                                <span>${cart.price}</span>
-                                <span>{cart.quantity}</span>
-                                <span>${cart.price * cart.quantity}</span>
-                            </div>
+                            return (
+                                <div key={item.id} className={classes.orderrow}>
+                                    <span>{item.title}</span>
+                                    <span>${item.price}</span>
+                                    <span>{item.quantity}</span>
+                                    <span>${item.price * item.quantity}</span>
+                                </div>)
                         }) : <p>No Item Selected</p>
                     }
 

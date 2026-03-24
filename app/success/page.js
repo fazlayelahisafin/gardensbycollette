@@ -2,15 +2,20 @@
 import classes from './page.module.css';
 import { useEffect, useContext } from 'react';
 import { CartContext } from '@/components/context';
-import { useRouter } from 'next/navigation';
+import { notFound, useRouter } from 'next/navigation';
+export const dynamic = 'force-dynamic';
 
 export default function SuccessPage() {
-    const { cart, setCart } = useContext(CartContext);
+    const { setCart } = useContext(CartContext);
     const router = useRouter();
 
     useEffect(() => {
         const searchParams = new URLSearchParams(window.location.search);
         const sessionId = searchParams.get('session_id');
+
+        if (!sessionId) {
+            notFound()
+        }
 
         async function verifyPayment() {
             if (!sessionId) return;

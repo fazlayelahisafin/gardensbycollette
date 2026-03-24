@@ -6,7 +6,7 @@ import classes from "./page.module.css";
 export default function AdminPanel() {
     return (
         <div className={classes.container}>
-            <h1 className={classes.title}>Admin Panel</h1>
+            <h1 className={classes.title}>Admin Panel for Collette</h1>
 
             <nav className={classes.nav}>
                 <ul className={classes.navList}>

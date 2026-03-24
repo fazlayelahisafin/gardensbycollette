@@ -1,41 +1,48 @@
+/* Body Background */
 .body {
     background: linear-gradient(135deg, #f5f7fa, #e4ecf7);
-}
-
-
-/* Form Container */
-
-.formcontainer {
+    min-height: 100vh;
+    padding: 60px 20px;
     display: flex;
     justify-content: center;
-    padding: 60px 20px;
+    align-items: flex-start;
+}
+
+/* Form Container */
+.formcontainer {
+    width: 100%;
+    max-width: 550px;
 }
 
 /* Form Card */
-
 .requestform {
     background: white;
-    width: 100%;
-    max-width: 550px;
     padding: 40px;
     border-radius: 14px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
+/* Back Button */
 .requestform p {
-    color: blue;
+    color: #2563eb;
     cursor: pointer;
-    text-decoration-line: underline;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+    font-weight: 500;
 }
 
+/* Form Title */
 .requestform h1 {
     margin-bottom: 30px;
     text-align: center;
-    color: black;
+    color: #111827;
+    font-size: 28px;
+    font-weight: 600;
 }
 
 /* Input Groups */
-
 .inputgroup {
     margin-bottom: 20px;
 }
@@ -43,7 +50,7 @@
 .inputgroup label {
     display: block;
     margin-bottom: 8px;
-    font-weight: bold;
+    font-weight: 600;
     color: #333;
 }
 
@@ -54,6 +61,7 @@
     border-radius: 8px;
     border: 1px solid #ddd;
     outline: none;
+    font-size: 14px;
 }
 
 .inputgroup textarea {
@@ -61,25 +69,81 @@
     resize: none;
 }
 
+/* Hidden File Input */
 .inputgroupimage {
     margin-bottom: 20px;
     visibility: hidden;
 }
 
+/* Upload Image Preview & Button */
+.inputgroup img {
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+    max-width: 100%;
+}
 
-/* Button */
-
-.requestform button {
+.inputgroup button {
+    display: block;
     width: 100%;
-    padding: 14px;
-    background: #1f2937;
+    padding: 12px;
+    background: #2563eb;
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
     cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 10px;
 }
 
-.requestform button:hover {
-    background: #111827;
+.inputgroup button:hover {
+    background: #1e4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Submit Button (SubmitReq component) */
+.submitButton {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 600;
+}
+
+.submitButton:hover {
+    background: #16a34a;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .requestform {
+        padding: 30px 20px;
+    }
+
+    .requestform h1 {
+        font-size: 24px;
+    }
+
+    .inputgroup input,
+    .inputgroup textarea {
+        font-size: 13px;
+    }
+
+    .inputgroup button,
+    .submitButton {
+        font-size: 14px;
+        padding: 12px;
+    }
 }

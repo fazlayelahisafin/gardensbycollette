@@ -59,7 +59,7 @@ export default function UploadFlowers() {
                             width={200} />}
                         <button onClick={handleClick} type='button'>Upload Image</button>
                     </div>
-                    <SubmitReq>Submit This Item</SubmitReq>
+                    <SubmitReq className={classes.submitButton}>Submit This Item</SubmitReq>
 
                 </form>
 
