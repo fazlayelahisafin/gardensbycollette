@@ -75,6 +75,7 @@ export default function Header() {
 
                     <Link
                         href="/my-cart"
+                        onClick={closeMenu}
                         className={`cart-link ${path === '/my-cart' ? 'act' : ''}`}
                     >
                         Cart ({cart.length})
