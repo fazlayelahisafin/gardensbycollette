@@ -1,7 +1,7 @@
 body {
   background: #f4f4f4;
   color: #171717;
-  padding-top: 120px;
+  padding-top: 80px;
   /* prevent content hiding behind fixed navbar */
 }
 
@@ -220,5 +220,12 @@ body {
   .heroBtn {
     width: 80%;
     margin: 5px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 150px;
+    /* more space for mobile navbar */
   }
 }
