@@ -11,41 +11,20 @@ export default function Header() {
     const { cart } = useContext(CartContext)
 
     const [menuOpen, setMenuOpen] = useState(false)
-
     const menuRef = useRef(null)
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen)
-    }
-
-    const closeMenu = () => {
-        setMenuOpen(false)
-    }
+    const toggleMenu = () => setMenuOpen(!menuOpen)
+    const closeMenu = () => setMenuOpen(false)
 
     /* Close menu when clicking outside */
-
     useEffect(() => {
-
         function handleClickOutside(event) {
-
-            if (
-                menuRef.current &&
-                !menuRef.current.contains(event.target)
-            ) {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
                 setMenuOpen(false)
             }
-
         }
-
         document.addEventListener("mousedown", handleClickOutside)
-
-        return () => {
-            document.removeEventListener(
-                "mousedown",
-                handleClickOutside
-            )
-        }
-
+        return () => document.removeEventListener("mousedown", handleClickOutside)
     }, [])
 
     return (
@@ -63,21 +42,20 @@ export default function Header() {
                     Gardens By Collette
                 </Link>
 
-                {/* Hamburger */}
+                {/* Cart always visible */}
 
-                <div
-                    className="hamburger"
-                    onClick={toggleMenu}
-                >
+                {/* Hamburger */}
+                <div className="hamburger" onClick={toggleMenu}>
                     ☰
                 </div>
 
-                {/* Menu */}
-
+                {/* Menu (mobile / desktop hidden for cart link only) */}
                 <div
                     ref={menuRef}
                     className={`header-right ${menuOpen ? "show" : ""}`}
                 >
+
+                    {/* Close button for mobile */}
 
                     <Link
                         href="/browse-flowers"
@@ -97,8 +75,7 @@ export default function Header() {
 
                     <Link
                         href="/my-cart"
-                        onClick={closeMenu}
-                        className={path === '/my-cart' ? 'act' : undefined}
+                        className={`cart-link ${path === '/my-cart' ? 'act' : ''}`}
                     >
                         Cart ({cart.length})
                     </Link>
